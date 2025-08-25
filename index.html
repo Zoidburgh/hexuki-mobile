@@ -32,8 +32,8 @@
 
         /* Phone simulator frame */
         .phone-frame {
-            width: 375px;
-            height: 812px;
+            width: 414px;
+            height: 896px;
             background: #000;
             border-radius: 40px;
             padding: 10px;
@@ -388,30 +388,6 @@
         }
 
         /* Size selector */
-        .size-selector {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 100;
-        }
-
-        .size-selector label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .size-selector select {
-            padding: 5px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            font-size: 14px;
-        }
 
         /* Notification system */
         .notification {
@@ -796,18 +772,6 @@
     </style>
 </head>
 <body>
-    <!-- Phone size selector -->
-    <div class="size-selector">
-        <label>Phone Size:</label>
-        <select id="phoneSize" onchange="changePhoneSize()">
-            <option value="375,812">iPhone 12/13/14 (375×812)</option>
-            <option value="375,667">iPhone 13 Mini (375×667)</option>
-            <option value="360,800">Android Small (360×800)</option>
-            <option value="320,568">iPhone SE (320×568)</option>
-            <option value="414,896">iPhone Plus (414×896)</option>
-            <option value="390,844">iPhone 14 Pro (390×844)</option>
-        </select>
-    </div>
 
     <!-- Phone simulator -->
     <div class="phone-frame" id="phoneFrame">
@@ -1219,14 +1183,6 @@
             {id: 17, row: 7, col: 3},
             {id: 18, row: 8, col: 2}
         ];
-
-        function changePhoneSize() {
-            const select = document.getElementById('phoneSize');
-            const [width, height] = select.value.split(',');
-            const frame = document.getElementById('phoneFrame');
-            frame.style.width = width + 'px';
-            frame.style.height = height + 'px';
-        }
 
         // Notification system
         let notificationTimeout = null;
